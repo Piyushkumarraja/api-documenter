@@ -1,0 +1,418 @@
+@import "../../utils/commonStyles/flex.scss";
+@import "../../utils/commonStyles/index.scss";
+
+.main-container {
+  font-size: 0.9em;
+  padding: 15px;
+  margin: 10px 10px 40px 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+
+  & > * {
+    // All immediate children irrespective of element
+    margin-bottom: 10px;
+  }
+
+  & > *:last-child {
+    // Last immediate child irrespective of element
+    margin-bottom: 0;
+  }
+
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid lightgrey;
+    padding-bottom: 5px;
+
+    &.editMode {
+    }
+
+    .main-header--left {
+      display: flex;
+      align-items: center;
+
+      .title {
+        font-size: 1.3em;
+        font-weight: 500;
+      }
+      .updatedAt {
+        padding-left: 15px;
+        font-size: 12px;
+        color: grey;
+        margin-top: 1px;
+      }
+    }
+    .action-btns {
+      @include flex-row-v-cen;
+      align-items: stretch;
+
+      & > *:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      .send-request-btn {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-right: 0;
+
+        &.viewMode {
+          border-radius: 5px;
+        }
+      }
+
+      .dropdown-arrow-btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        min-width: 0;
+        width: 30px;
+        position: relative;
+
+        .sendOptionsCnt {
+          top: 35px;
+          right: 0;
+          min-width: 115px;
+          text-transform: capitalize;
+        }
+
+        .sendOption {
+          padding: 3px 10px;
+        }
+      }
+    }
+  }
+
+  .method-path {
+    @include flex-row-v-cen;
+
+    .method {
+      text-transform: uppercase;
+      margin-right: 10px;
+      font-weight: bold;
+      color: darkolivegreen;
+
+      &.get {
+        color: var(--success);
+      }
+
+      &.post,
+      &.put,
+      &.patch {
+        color: darkgoldenrod;
+      }
+
+      &.delete {
+        color: var(--error);
+      }
+    }
+
+    .path {
+      flex: 1;
+    }
+  }
+
+  .description {
+    color: #585858;
+    margin-bottom: 40px;
+  }
+
+  .parameters {
+    margin-bottom: 20px;
+
+    .parameters__title {
+      padding-bottom: 10px;
+      @include flex-row-v-cen;
+    }
+  }
+
+  .request-headers {
+    margin-bottom: 20px;
+
+    .request-headers__title {
+      padding-bottom: 10px;
+      @include flex-row-v-cen;
+    }
+  }
+
+  .request-response-bodies {
+    @include flex-row-sb;
+    margin-bottom: 30px;
+
+    .request-body {
+      width: calc(50% - 30px);
+      margin-right: 60px;
+      @include flex-col;
+      height: 250px;
+      position: relative;
+
+      .request-body__title {
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .prettify {
+          cursor: pointer;
+          color: darkgrey;
+          font-size: 11px;
+        }
+      }
+
+      .request-body__json {
+        flex: 1;
+        padding: 5px 10px;
+        border-radius: 4px;
+        border: 1px solid gray;
+        overflow: overlay;
+        background-color: #ffffff;
+        outline: none;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+          height: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.2);
+          border-radius: 5px;
+        }
+
+        &.disabled {
+          border: none;
+          background-color: rgba(178, 190, 181, 0.15);
+        }
+      }
+
+      .invalidJSONErr {
+        position: absolute;
+        right: 0;
+        bottom: -20px;
+        color: var(--error);
+      }
+    }
+
+    .response-body {
+      width: calc(50% - 30px);
+      @include flex-col;
+      cursor: default;
+      height: 250px;
+      position: relative;
+
+      .response-body__title {
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .response-body__json {
+        flex: 1;
+        padding: 5px 10px;
+        border-radius: 4px;
+        border: 1px solid lightgrey;
+        overflow: overlay;
+        background-color: #ffffff;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+          height: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.2);
+          border-radius: 5px;
+        }
+      }
+
+      .success {
+        color: var(--success);
+      }
+
+      .error {
+        color: var(--error);
+      }
+    }
+
+    .response-view-more-btn {
+      font-size: 10px;
+      position: absolute;
+      bottom: 5px;
+      left: calc(50% - 55px);
+      color: darkgrey;
+      border-color: darkgrey;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+  }
+
+  .examples-cnt {
+    .example-cnt {
+      .example-row {
+        border: 1px solid lightgrey;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        span {
+          display: flex;
+          align-items: center;
+
+          &.flex1 {
+            flex: 1;
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      .example-all-cnt {
+        margin: 20px;
+
+        .example-paramters-reqHeaders {
+          .example-paramters {
+            margin-bottom: 20px;
+
+            .example-paramters__title {
+              margin-bottom: 5px;
+            }
+          }
+
+          .example-reqHeaders {
+            margin-bottom: 20px;
+
+            .example-reqHeaders__title {
+              margin-bottom: 5px;
+            }
+          }
+        }
+
+        .example-request-response-bodies {
+          @include flex-row-sb;
+
+          .example-request-body {
+            width: calc(50% - 30px);
+            margin-right: 60px;
+            @include flex-col;
+            height: 250px;
+            position: relative;
+            max-width: calc(50% - 30px);
+
+            .example-request-body__title {
+              padding-bottom: 10px;
+            }
+
+            .example-request-body__json {
+              flex: 1;
+              background: #2b2f3e;
+              color: white;
+              padding: 5px 10px;
+              border-radius: 3px;
+              overflow: overlay;
+
+              &::-webkit-scrollbar {
+                width: 5px;
+                height: 5px;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.2);
+                border-radius: 5px;
+              }
+            }
+          }
+
+          .example-response-body {
+            width: calc(50% - 30px);
+            @include flex-col;
+            height: 250px;
+            position: relative;
+
+            .example-response-body__title {
+              padding-bottom: 10px;
+              display: flex;
+              justify-content: space-between;
+            }
+
+            .example-response-body__json {
+              flex: 1;
+              background: #2b2f3e;
+              color: white;
+              padding: 5px 10px;
+              border-radius: 3px;
+              overflow: overlay;
+
+              &::-webkit-scrollbar {
+                width: 5px;
+                height: 5px;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.2);
+                border-radius: 5px;
+              }
+            }
+
+            .success {
+              color: var(--success);
+            }
+
+            .error {
+              color: var(--error);
+            }
+          }
+
+          .view-more-btn {
+            font-size: 10px;
+            position: absolute;
+            bottom: 5px;
+            left: calc(50% - 55px);
+            color: white;
+            border-color: white;
+          }
+
+          pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+          }
+        }
+      }
+    }
+  }
+
+  .addIcon {
+    &:hover {
+      cursor: pointer;
+    }
+
+    margin-left: 5px;
+    color: darkgrey;
+  }
+
+  .removeIcon {
+    &:hover {
+      cursor: pointer;
+    }
+
+    margin-left: 5px;
+    color: darkgrey;
+  }
+
+  .padding0 {
+    padding: 0;
+  }
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "method": "get",
+    "path": "{{HOST_URL}}/posts",
+    "title": "Edit a user",
+    "description": "This endpoint will edit a user record",
+    "parameters": [
+      {
+        "name": "email",
+        "required": true,
+        "description": "Email ID of user",
+        "value": "example@gmail.com"
+      },
+      {
+        "name": "username",
+        "required": false,
+        "description": "Username of user",
+        "value": "example"
+      }
+    ],
+    "requestHeaders": [
+      {
+        "name": "Authorization",
+        "required": true,
+        "value": "{{token}}"
+      }
+    ],
+    "requestBody": {
+      "username": "parasagrawal",
+      "email": "parasagrawal@gmail.com"
+    },
+    "responseBody": {
+      "statusCode": 200,
+      "data": {
+        "message1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "message2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "message3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+        "username": "parasagrawal",
+        "email": "parasagrawal@gmail.com"
+      }
+    },
+    "examples": [
+      {
+        "title": "Edit a user Success",
+        "requestBody": {
+          "username": "parasagrawal",
+          "email": "parasagrawal@gmail.com"
+        },
+        "parameters": [
+          {
+            "name": "email",
+            "value": "parasagrawal@gmail.com"
+          },
+          {
+            "name": "username",
+            "value": "parasagrawal"
+          }
+        ],
+        "requestHeaders": [
+          {
+            "name": "Authorization",
+            "value": "asnfofihj39nalkjewdf"
+          }
+        ],
+        "response": {
+          "statusCode": 200,
+          "data": {
+            "status": "SUCCESS",
+            "message": "User data updated successfully",
+            "data": {
+              "username": "parasagrawal",
+              "email": "parasagrawal@gmail.com"
+            }
+          }
+        }
+      }
+    ],
+    "updatedAt": 1619262777309
+  }
+]

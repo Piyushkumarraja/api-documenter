@@ -1,0 +1,11 @@
+.removeIcon {
+  &:hover {
+    cursor: pointer;
+  }
+
+  color: darkgrey;
+}
+
+.required-asterisk {
+  color: #8b0000;
+}

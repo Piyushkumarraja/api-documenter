@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.zero-state-msg {
+  font-size: 10px;
+  color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-target {
+  padding-top: 140px;
+  margin-top: -140px;
+  font-size: 1px;
+  visibility: hidden;
+}
+
+.dropdown-arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+}
+
+:root {
+  --primary: rgba(76, 82, 100, 0.9);
+  --primary-70: rgba(76, 82, 100, 0.7);
+  --secondary: rgba(220, 0, 78, 0.7);
+  --error: rgba(139, 0, 0, 1); /* darkred */
+  --error-70: rgba(139, 0, 0, 0.7);
+  --success: green;
+}
+
+.envVariable {
+  font-weight: bold;
+  color: #52696e;
+}
+
+.visibilityHidden {
+  visibility: hidden;
+}
+
+.cursorDefault {
+  cursor: default;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}

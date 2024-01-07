@@ -1,0 +1,113 @@
+@import "utils/commonStyles/flex.scss";
+
+.main-cnt {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: fit-content;
+    padding: 50px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    position: relative;
+    top: 20%;
+
+    .main-header {
+      @include flex-row-v-cen;
+      position: relative;
+      bottom: 100px;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 35px;
+        height: 35px;
+        margin-right: 5px;
+      }
+
+      .main-header__appName {
+      }
+    }
+
+    .form-header {
+      display: flex;
+      margin-bottom: 20px;
+
+      .header-button {
+        flex: 1;
+        background-color: rgba(178, 190, 181, 0.15);
+
+        &.active {
+          box-shadow: inset 0px 5px 10px #c1c1c1;
+        }
+      }
+    }
+
+    .inputTextField {
+      margin-bottom: 5px;
+    }
+
+    .submitBtn {
+      margin-bottom: 20px;
+      height: 40px;
+    }
+
+    .google-login {
+      background-color: var(--primary) !important;
+      color: white !important;
+      border-radius: 4px !important;
+      height: 40px !important;
+      display: flex;
+      justify-content: center;
+
+      img {
+        margin-right: 10px;
+      }
+
+      div {
+        background-color: transparent !important;
+      }
+
+      &:hover {
+        background-color: rgba(53, 57, 70, 0.9) !important;
+      }
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.8em;
+      display: flex;
+      justify-content: center;
+
+      .forgot-pwd {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .login-with-sample-creds {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .resend-otp {
+        &.active {
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

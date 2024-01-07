@@ -1,0 +1,57 @@
+@import "../../utils/commonStyles/flex.scss";
+
+.env-cnt {
+  max-height: 600px;
+  overflow: overlay;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+}
+
+.padding10px {
+  padding: 10px;
+}
+
+.addRemoveIcon {
+  &:hover {
+    cursor: pointer;
+  }
+
+  color: darkgrey;
+}
+
+.envTitle {
+  padding: 10px;
+  padding-bottom: 0;
+  @include flex-row-b-sb-cen;
+
+  .envTitle--left {
+    @include flex-row-v-cen;
+
+    svg {
+      margin-left: 5px;
+      @include flex-row-v-cen;
+    }
+  }
+
+  .envTitle--right {
+    @include flex-row-v-cen;
+
+    .deleteIcon {
+      cursor: pointer;
+      color: var(--error-70);
+      margin-right: 5px;
+    }
+
+    .resetIcon {
+      cursor: pointer;
+      color: var(--error-70);
+    }
+  }
+}

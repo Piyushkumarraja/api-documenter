@@ -1,0 +1,48 @@
+@import "utils/commonStyles/flex.scss";
+
+.main-container {
+  font-size: 12px;
+  padding: 20px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .main-header {
+    font-size: 14px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .model-wrapper {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 5px;
+  }
+
+  .sub-header {
+    margin-top: 5px;
+    font-size: 14px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .addFolderIcon {
+    cursor: pointer;
+    width: 23px;
+    height: 23px;
+  }
+
+  .api-folders {
+    flex: 1;
+  }
+
+  .folder-wrapper {
+  }
+
+  .subfolder-wrapper {
+    padding-left: 20px;
+  }
+}

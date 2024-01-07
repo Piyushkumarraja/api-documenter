@@ -1,0 +1,28 @@
+[
+  {
+    "envName": "production",
+    "variables": [
+      {
+        "key": "token",
+        "value": "kjsd78337t6dgPRODhbsaskjad7w"
+      },
+      {
+        "key": "HOST_URL",
+        "value": "https://jsonplaceholder.typicode.com"
+      }
+    ]
+  },
+  {
+    "envName": "development",
+    "variables": [
+      {
+        "key": "token",
+        "value": "bhe32789ewDEVudihsbn"
+      },
+      {
+        "key": "HOST_URL",
+        "value": "https://development.com"
+      }
+    ]
+  }
+]
